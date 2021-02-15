@@ -9,7 +9,7 @@ services:
 before_install:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS quay.io
 
-install:
+#install:
   #- pip install ansible
   #- ansible-galaxy install -r apb/requirements-travis.yml
   #- ansible-playbook apb/playbooks/provision.yml --syntax-check

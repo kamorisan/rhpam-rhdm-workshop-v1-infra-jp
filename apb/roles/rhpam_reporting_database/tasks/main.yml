@@ -26,7 +26,11 @@
 
 - name: Attach ConfigMap
   shell: "oc set volume dc/postgresql --name=postgresql-config-volume --add -m /tmp/config-files -t configmap --configmap-name=postgresql-config-map -n {{OCP_PROJECT}}"
-  #shell: "oc set volume dc/postgresql --name=postgresql-config-map --add -m /tmp/config-files -t configmap --configmap-name=postgresql-config-map -n {{OCP_PROJECT}}"
+  when: postgresql_cm_result is failed
+
+# 追加
+- name: Set ConfigMap
+  shell: "oc set env --from=configmap/postgresql-config-map dc/postgresql -n {{OCP_PROJECT}}"
   when: postgresql_cm_result is failed
 
 - name: Set Deployment Hooks

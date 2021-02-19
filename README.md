@@ -45,3 +45,4 @@ To deprovision the environment, you can use the following command:
   oc run apb --restart=Never --image="quay.io/openshiftlabs/rhpam-rhdm-workshop-v1-apb:ocp-3.11" \
 -- deprovision -vvv -e namespace="labs-infra" -e openshift_token=$(oc whoami -t) -e user_count=5
   ```
+

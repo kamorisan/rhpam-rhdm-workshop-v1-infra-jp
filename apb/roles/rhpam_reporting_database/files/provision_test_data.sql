@@ -66,7 +66,7 @@ END;$$ LANGUAGE plpgsql;
 
 DELETE FROM customer_satisfaction;
 
-SELECT generate_customer_satisfaction_mocks(15000);
+SELECT generate_customer_satisfaction_mocks(1500);
 
 -- Task Table Mocks
 DROP FUNCTION IF EXISTS generate_task_mocks(integer);
@@ -142,4 +142,4 @@ END;$$ LANGUAGE plpgsql;
 
 DELETE FROM public.task;
 
-SELECT generate_task_mocks(15000);
+SELECT generate_task_mocks(1500);
